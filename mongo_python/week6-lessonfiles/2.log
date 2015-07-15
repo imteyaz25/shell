@@ -1,0 +1,148 @@
+Tue Oct 15 21:44:24.796 [initandlisten] MongoDB starting : pid=25523 port=27018 dbpath=/data/rs2 64-bit host=5TS206079782ML.local
+Tue Oct 15 21:44:24.796 [initandlisten] 
+Tue Oct 15 21:44:24.796 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+Tue Oct 15 21:44:24.796 [initandlisten] db version v2.4.6
+Tue Oct 15 21:44:24.796 [initandlisten] git version: b9925db5eac369d77a3a5f5d98a145eaaacd9673
+Tue Oct 15 21:44:24.796 [initandlisten] build info: Darwin bs-osx-106-x86-64-2.10gen.cc 10.8.0 Darwin Kernel Version 10.8.0: Tue Jun  7 16:32:41 PDT 2011; root:xnu-1504.15.3~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+Tue Oct 15 21:44:24.796 [initandlisten] allocator: system
+Tue Oct 15 21:44:24.796 [initandlisten] options: { dbpath: "/data/rs2", fork: true, logpath: "2.log", port: 27018, replSet: "m101", smallfiles: true }
+Tue Oct 15 21:44:24.809 [initandlisten] journal dir=/data/rs2/journal
+Tue Oct 15 21:44:24.809 [initandlisten] recover : no journal files present, no recovery needed
+Tue Oct 15 21:44:25.448 [initandlisten] preallocateIsFaster=true 12.32
+Tue Oct 15 21:44:25.473 [FileAllocator] allocating new datafile /data/rs2/local.ns, filling with zeroes...
+Tue Oct 15 21:44:25.473 [FileAllocator] creating directory /data/rs2/_tmp
+Tue Oct 15 21:44:25.626 [FileAllocator] done allocating datafile /data/rs2/local.ns, size: 16MB,  took 0.152 secs
+Tue Oct 15 21:44:25.808 [FileAllocator] allocating new datafile /data/rs2/local.0, filling with zeroes...
+Tue Oct 15 21:44:25.855 [FileAllocator] done allocating datafile /data/rs2/local.0, size: 16MB,  took 0.046 secs
+Tue Oct 15 21:44:26.146 [initandlisten] command local.$cmd command: { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0  reslen:37 673ms
+Tue Oct 15 21:44:26.146 [websvr] admin web console waiting for connections on port 28018
+Tue Oct 15 21:44:26.146 [initandlisten] waiting for connections on port 27018
+Tue Oct 15 21:44:26.147 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:44:26.147 [rsStart] replSet info you may need to run replSetInitiate -- rs.initiate() in the shell -- if that is not already done
+Tue Oct 15 21:44:36.149 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:44:46.150 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:44:56.151 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:06.152 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:16.154 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:26.155 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:36.156 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:46.157 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:45:56.158 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:06.159 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:16.160 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:26.162 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:36.162 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:46.163 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:46:56.165 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:06.166 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:16.167 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:26.168 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:36.170 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:46.170 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:47:52.826 [initandlisten] connection accepted from 127.0.0.1:54118 #1 (1 connection now open)
+Tue Oct 15 21:47:56.172 [rsStart] replSet can't get local.system.replset config from self or any seed (EMPTYCONFIG)
+Tue Oct 15 21:48:06.173 [rsStart] trying to contact localhost:27017
+Tue Oct 15 21:48:06.175 [rsStart] replSet I am localhost:27018
+Tue Oct 15 21:48:06.175 [rsStart] replSet got config version 1 from a remote, saving locally
+Tue Oct 15 21:48:06.175 [rsStart] replSet info saving a newer config version to local.system.replset
+Tue Oct 15 21:48:06.179 [rsStart] replSet saveConfigLocally done
+Tue Oct 15 21:48:06.179 [rsStart] replSet STARTUP2
+Tue Oct 15 21:48:06.179 [rsSync] ******
+Tue Oct 15 21:48:06.179 [rsSync] creating replication oplog of size: 192MB...
+Tue Oct 15 21:48:06.181 [FileAllocator] allocating new datafile /data/rs2/local.1, filling with zeroes...
+Tue Oct 15 21:48:08.177 [rsHealthPoll] replSet member localhost:27017 is up
+Tue Oct 15 21:48:08.177 [rsHealthPoll] replSet member localhost:27017 is now in state SECONDARY
+Tue Oct 15 21:48:08.177 [rsHealthPoll] replset info localhost:27019 thinks that we are down
+Tue Oct 15 21:48:08.177 [rsHealthPoll] replSet member localhost:27019 is up
+Tue Oct 15 21:48:08.178 [rsHealthPoll] replSet member localhost:27019 is now in state STARTUP2
+Tue Oct 15 21:48:08.843 [initandlisten] connection accepted from 127.0.0.1:54123 #2 (2 connections now open)
+Tue Oct 15 21:48:13.984 [initandlisten] connection accepted from 127.0.0.1:54124 #3 (3 connections now open)
+Tue Oct 15 21:48:14.295 [conn1] end connection 127.0.0.1:54118 (2 connections now open)
+Tue Oct 15 21:48:16.394 [FileAllocator] done allocating datafile /data/rs2/local.1, size: 256MB,  took 10.213 secs
+Tue Oct 15 21:48:19.202 [rsSync] ******
+Tue Oct 15 21:48:19.202 [rsSync] replSet initial sync pending
+Tue Oct 15 21:48:19.202 [conn3] replSet RECOVERING
+Tue Oct 15 21:48:19.202 [conn3] replSet info voting yea for localhost:27017 (0)
+Tue Oct 15 21:48:19.202 [rsSync] replSet syncing to: localhost:27017
+Tue Oct 15 21:48:19.202 [conn3] command admin.$cmd command: { replSetElect: 1, set: "m101", who: "localhost:27017", whoid: 0, cfgver: 1, round: ObjectId('525df05d47cfbee0e4c9cfe5') } ntoreturn:1 keyUpdates:0 locks(micros) W:232 reslen:66 5217ms
+Tue Oct 15 21:48:19.203 [rsSync] build index local.me { _id: 1 }
+Tue Oct 15 21:48:19.204 [rsSync] build index done.  scanned 0 total records. 0 secs
+Tue Oct 15 21:48:19.362 [rsSync] build index local.replset.minvalid { _id: 1 }
+Tue Oct 15 21:48:19.363 [rsSync] build index done.  scanned 0 total records. 0 secs
+Tue Oct 15 21:48:19.363 [rsSync] replSet initial sync drop all databases
+Tue Oct 15 21:48:19.363 [rsSync] dropAllDatabasesExceptLocal 1
+Tue Oct 15 21:48:19.363 [rsSync] replSet initial sync clone all databases
+Tue Oct 15 21:48:19.364 [rsSync] replSet initial sync data copy, starting syncup
+Tue Oct 15 21:48:19.364 [rsSync] oplog sync 1 of 3
+Tue Oct 15 21:48:19.364 [rsSync] oplog sync 2 of 3
+Tue Oct 15 21:48:19.365 [rsSync] replSet initial sync building indexes
+Tue Oct 15 21:48:19.365 [rsSync] oplog sync 3 of 3
+Tue Oct 15 21:48:19.365 [rsSync] replSet initial sync finishing up
+Tue Oct 15 21:48:19.782 [rsSync] replSet set minValid=525df04d:1
+Tue Oct 15 21:48:19.792 [rsSync] replSet initial sync done
+Tue Oct 15 21:48:21.794 [rsSync] replSet SECONDARY
+Tue Oct 15 21:48:22.186 [rsHealthPoll] replSet member localhost:27019 is now in state RECOVERING
+Tue Oct 15 21:48:22.186 [rsHealthPoll] replSet member localhost:27017 is now in state PRIMARY
+Tue Oct 15 21:48:22.186 [rsMgr] not electing self, localhost:27019 would veto with 'I don't think localhost:27018 is electable'
+Tue Oct 15 21:48:22.192 [rsBackgroundSync] replSet syncing to: localhost:27017
+Tue Oct 15 21:48:22.976 [rsSyncNotifier] replset setting oplog notifier to localhost:27017
+Tue Oct 15 21:48:24.187 [rsHealthPoll] replSet member localhost:27019 is now in state SECONDARY
+Tue Oct 15 21:48:36.860 [conn2] end connection 127.0.0.1:54123 (1 connection now open)
+Tue Oct 15 21:48:36.861 [initandlisten] connection accepted from 127.0.0.1:54135 #4 (3 connections now open)
+Tue Oct 15 21:48:40.613 [initandlisten] connection accepted from 127.0.0.1:54138 #5 (3 connections now open)
+Tue Oct 15 21:48:40.616 [conn5] end connection 127.0.0.1:54138 (2 connections now open)
+Tue Oct 15 21:48:47.221 [conn3] end connection 127.0.0.1:54124 (1 connection now open)
+Tue Oct 15 21:48:47.221 [initandlisten] connection accepted from 127.0.0.1:54139 #6 (3 connections now open)
+Tue Oct 15 21:49:06.878 [conn4] end connection 127.0.0.1:54135 (1 connection now open)
+Tue Oct 15 21:49:06.879 [initandlisten] connection accepted from 127.0.0.1:54153 #7 (3 connections now open)
+Tue Oct 15 21:49:17.240 [conn6] end connection 127.0.0.1:54139 (1 connection now open)
+Tue Oct 15 21:49:17.241 [initandlisten] connection accepted from 127.0.0.1:54155 #8 (2 connections now open)
+Tue Oct 15 21:49:36.897 [conn7] end connection 127.0.0.1:54153 (1 connection now open)
+Tue Oct 15 21:49:36.898 [initandlisten] connection accepted from 127.0.0.1:54161 #9 (3 connections now open)
+Tue Oct 15 21:49:47.259 [conn8] end connection 127.0.0.1:54155 (1 connection now open)
+Tue Oct 15 21:49:47.260 [initandlisten] connection accepted from 127.0.0.1:54162 #10 (3 connections now open)
+Tue Oct 15 21:50:06.920 [conn9] end connection 127.0.0.1:54161 (1 connection now open)
+Tue Oct 15 21:50:06.920 [initandlisten] connection accepted from 127.0.0.1:54167 #11 (3 connections now open)
+Tue Oct 15 21:50:17.279 [conn10] end connection 127.0.0.1:54162 (1 connection now open)
+Tue Oct 15 21:50:17.279 [initandlisten] connection accepted from 127.0.0.1:54168 #12 (3 connections now open)
+Tue Oct 15 21:50:36.944 [conn11] end connection 127.0.0.1:54167 (1 connection now open)
+Tue Oct 15 21:50:36.944 [initandlisten] connection accepted from 127.0.0.1:54173 #13 (3 connections now open)
+Tue Oct 15 21:50:47.298 [conn12] end connection 127.0.0.1:54168 (1 connection now open)
+Tue Oct 15 21:50:47.298 [initandlisten] connection accepted from 127.0.0.1:54174 #14 (3 connections now open)
+Tue Oct 15 21:51:06.965 [conn13] end connection 127.0.0.1:54173 (1 connection now open)
+Tue Oct 15 21:51:06.965 [initandlisten] connection accepted from 127.0.0.1:54179 #15 (3 connections now open)
+Tue Oct 15 21:51:17.320 [conn14] end connection 127.0.0.1:54174 (1 connection now open)
+Tue Oct 15 21:51:17.320 [initandlisten] connection accepted from 127.0.0.1:54180 #16 (3 connections now open)
+Tue Oct 15 21:51:36.988 [conn15] end connection 127.0.0.1:54179 (1 connection now open)
+Tue Oct 15 21:51:36.988 [initandlisten] connection accepted from 127.0.0.1:54185 #17 (3 connections now open)
+Tue Oct 15 21:51:47.342 [conn16] end connection 127.0.0.1:54180 (1 connection now open)
+Tue Oct 15 21:51:47.343 [initandlisten] connection accepted from 127.0.0.1:54186 #18 (3 connections now open)
+Tue Oct 15 21:52:07.009 [conn17] end connection 127.0.0.1:54185 (1 connection now open)
+Tue Oct 15 21:52:07.010 [initandlisten] connection accepted from 127.0.0.1:54191 #19 (3 connections now open)
+Tue Oct 15 21:52:17.363 [conn18] end connection 127.0.0.1:54186 (1 connection now open)
+Tue Oct 15 21:52:17.363 [initandlisten] connection accepted from 127.0.0.1:54192 #20 (3 connections now open)
+Tue Oct 15 21:52:37.028 [conn19] end connection 127.0.0.1:54191 (1 connection now open)
+Tue Oct 15 21:52:37.029 [initandlisten] connection accepted from 127.0.0.1:54197 #21 (2 connections now open)
+Tue Oct 15 21:52:47.383 [conn20] end connection 127.0.0.1:54192 (1 connection now open)
+Tue Oct 15 21:52:47.383 [initandlisten] connection accepted from 127.0.0.1:54203 #22 (3 connections now open)
+Tue Oct 15 21:52:59.549 [signalProcessingThread] got signal 15 (Terminated: 15), will terminate after current cmd ends
+Tue Oct 15 21:52:59.550 [signalProcessingThread] now exiting
+Tue Oct 15 21:52:59.550 dbexit: 
+Tue Oct 15 21:52:59.550 [signalProcessingThread] shutdown: going to close listening sockets...
+Tue Oct 15 21:52:59.550 [signalProcessingThread] closing listening socket: 9
+Tue Oct 15 21:52:59.551 [signalProcessingThread] closing listening socket: 10
+Tue Oct 15 21:52:59.554 [signalProcessingThread] closing listening socket: 11
+Tue Oct 15 21:52:59.554 [signalProcessingThread] removing socket file: /tmp/mongodb-27018.sock
+Tue Oct 15 21:52:59.554 [signalProcessingThread] shutdown: going to flush diaglog...
+Tue Oct 15 21:52:59.554 [signalProcessingThread] shutdown: going to close sockets...
+Tue Oct 15 21:52:59.554 [signalProcessingThread] shutdown: waiting for fs preallocator...
+Tue Oct 15 21:52:59.554 [signalProcessingThread] shutdown: lock for final commit...
+Tue Oct 15 21:52:59.554 [signalProcessingThread] shutdown: final commit...
+Tue Oct 15 21:52:59.556 [conn21] end connection 127.0.0.1:54197 (1 connection now open)
+Tue Oct 15 21:52:59.557 [conn22] end connection 127.0.0.1:54203 (1 connection now open)
+Tue Oct 15 21:52:59.570 [signalProcessingThread] shutdown: closing all files...
+Tue Oct 15 21:52:59.570 [signalProcessingThread] closeAllFiles() finished
+Tue Oct 15 21:52:59.570 [signalProcessingThread] journalCleanup...
+Tue Oct 15 21:52:59.571 [signalProcessingThread] removeJournalFiles
+Tue Oct 15 21:52:59.571 [signalProcessingThread] shutdown: removing fs lock...
+Tue Oct 15 21:52:59.571 dbexit: really exiting now
