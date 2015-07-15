@@ -1,0 +1,12 @@
+<p>New Person </p>
+<%= form_for :person, url: 'create' do |f| %>
+<p>
+	<%= f.label :Name %><br/>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :Age %><br/>
+	<%= f.text_field :age %>
+</p>
+<%= f.submit 'Save' %>
+<% end %>

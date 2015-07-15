@@ -1,0 +1,4 @@
+total 8
+lrwxrwxrwx 1 root     root           26 Apr 23 05:39 nbcutveadmin.prod -> /var/www/html/nbcutveadmin
+drwxr-xr-x 2 root     root         4096 May  7 06:48 DEFAULT-VHOST
+dr-xr-s--- 5 www-data nbcutveadmin 4096 Jun 26 08:03 nbcutveadmin

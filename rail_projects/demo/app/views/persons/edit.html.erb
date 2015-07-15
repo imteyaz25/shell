@@ -1,0 +1,12 @@
+<p>Edit Person </p>
+<%= form_for :person, url: person_path(@person), method: :patch do |f| %>
+<p>
+	<%= f.label :Name %><br/>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :Age %><br/>
+	<%= f.text_field :age %>
+</p>
+<%= f.submit 'Save' %>
+<% end %>
