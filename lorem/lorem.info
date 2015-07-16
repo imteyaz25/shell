@@ -1,0 +1,6 @@
+name = Lorem
+description = Lorem ipsum module to generate lorem ipsum text
+core = 7.x
+version = 0.1
+
+scripts[] = lorem.js

@@ -1,0 +1,73 @@
+<?php
+/*
+*
+* Implements hook_menu()
+*/
+
+function lorem_menu(){
+    $items['admin/config/system/lorem'] = array(
+        'title' => 'Lorem Ipsum Generator',
+        'description' => 'Lorem Ipsum Generator',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('text_generator'),
+        'access arguments' => array('access content'),
+    );
+    return $items;
+}
+
+function text_generator($form, &$form_submit){
+	$form['message'] = array(
+    '#type' => 'item',
+  );
+
+  $form['lorem_text'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Lorem Text:',
+        '#size' => 20,
+        '#required' => TRUE,
+        "#default_value" => "Lorem Ipsum",
+	);
+	$form['rows'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Rows:',
+        '#size' => 5,
+        '#required' => TRUE,
+        "#default_value" => "4",
+	);
+	$form['column'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Column:',
+        '#size' => 5,
+        '#required' => TRUE,
+        "#default_value" => 4,
+	);
+	$form['button'] = array(
+        '#type' => 'button',
+        '#value' => t('Generate'),
+    );
+    return $form;
+}
+
+/*function text_generator_validate($form, &$form_state) {
+  if (empty($form_state['values']['lorem_text'])){
+    form_set_error('Text', t('Please provide any text.'));
+  }
+}
+
+function text_generator_submit($form, &$form_state) {
+  $text = $form_state['values']['lorem_text'];
+  $rows = $form_state['values']['rows'];
+  $column = $form_state['values']['column'];
+  $output = "";
+  for($i=0;$i<$rows;$i++){
+  	for($j=0;$j<$column;$j++)
+  		$output .=$text." ";
+  	$output .="<br/>";
+  }
+
+
+
+  //drupal_set_message(t($output));
+  //drupal_goto('lorem');
+  //return $output;
+}*/
