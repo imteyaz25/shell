@@ -28,18 +28,40 @@ function text_generator($form, &$form_submit){
         "#default_value" => "Lorem Ipsum",
 	);
 	$form['rows'] = array(
-		'#type' => 'textfield',
+		'#type' => 'select',
 		'#title' => 'Rows:',
-        '#size' => 5,
-        '#required' => TRUE,
-        "#default_value" => "4",
+    '#options' => array(
+      0 => t('select'),
+      1 => 1,
+      2 => 2,
+      3 => 3,
+      4 => 4,
+      5 => 5,
+      6 => 6,
+      7 => 7,
+      8 => 8,
+      9 => 9,
+      10 => 10,
+    ),
+    '#default_value' => 0,
 	);
 	$form['column'] = array(
-		'#type' => 'textfield',
+		'#type' => 'select',
 		'#title' => 'Column:',
-        '#size' => 5,
-        '#required' => TRUE,
-        "#default_value" => 4,
+      '#options' => array(
+      0 => t('select'),
+      1 => 1,
+      2 => 2,
+      3 => 3,
+      4 => 4,
+      5 => 5,
+      6 => 6,
+      7 => 7,
+      8 => 8,
+      9 => 9,
+      10 => 10,
+    ),
+    '#default_value' => 0,
 	);
 	$form['button'] = array(
         '#type' => 'button',
