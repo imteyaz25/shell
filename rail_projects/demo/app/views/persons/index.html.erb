@@ -1,0 +1,11 @@
+<h1>All Persons</h1>
+<% if @persons.blank? %>
+<p>There are no persons :)</p>
+<% else %>
+<ul>
+<% @persons.each do |person| %>
+	<li><%= person.name %> : <%= person.age %> <%= link_to 'view', person %> <%= link_to 'Edit', edit_person_path(person) %> <%= link_to 'Destroy' , person_path(person), method: :delete, data: {confirm: 'Are you sure?'} %></li>
+<% end %>
+</ul>
+<% end %>
+<%= link_to 'New person', new_person_path %>

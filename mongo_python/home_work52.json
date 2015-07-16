@@ -1,0 +1,23 @@
+use blog
+db.zips.aggregate([
+     {$group:
+             {
+                  _id:{state:"$state",city:"$city"},
+                  pop: {$sum:"$pop"},
+             }
+     },
+     {$match:
+            {
+                "_id.state":{$in:["NY","CA"]},
+                pop:{$gt:25000},
+            }
+     },
+     {$group:
+            {
+              _id:0,
+               total:{$avg:"$pop"}
+            }
+     }
+])
+
+/*select state, city, sum(pop) groupby (state,city) having pop>25000;*/

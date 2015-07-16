@@ -1,0 +1,10 @@
+<h1>Welcome to hello world...</h1>
+<%= link_to 'My Blog', controller: 'articles' %><br/>
+<%= link_to 'Persons', controller: 'persons', action: 'index' %><br/>
+<% if not session[:user_name] %>
+<%= link_to 'Login', controller: 'session', action: 'login' %><br/>
+<%= link_to 'Register', controller: 'users', action: 'new' %><br/>
+<% else %>
+<%= link_to 'Logout', controller: 'session', action: 'logout' %><br/>
+<% end %>
+<%= session[:user_name] %>
