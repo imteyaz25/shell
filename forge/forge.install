@@ -1,0 +1,29 @@
+<?php
+//Implement hook_install
+
+function forge_install(){
+  drupal_install_schema('forge');
+}
+
+function forge_uninstall(){
+  drupal_uninstall_schema('forge');
+}
+function forge_schema(){
+  $schema['forge'] = array(
+    'description' => 'The table for forge',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary id',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'urls' => array(
+        'description' => 'Primary id',
+        'type' => 'text',
+      ),
+    ),
+      'primary key' => array('id'),
+  );
+  return $schema;
+}

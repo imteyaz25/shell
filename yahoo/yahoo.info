@@ -1,0 +1,4 @@
+name = Yahoo Coursera API
+description = A block module that lists Coursera API
+core = 7.x
+version = 1.0

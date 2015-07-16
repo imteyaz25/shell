@@ -1,0 +1,56 @@
+<?php
+
+function mirchi_menu(){
+  $items['input/examples'] = array(
+    'title' => 'Form API Example',
+    'description' => 'Example of using the Form API',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mirchi_simple_form'),
+    'access callback' =>  TRUE,
+   );
+  $items['input/examples/simple'] = array(
+    'title' => 'Simple',
+    'description' => 'Simple example using a page callback',
+    'page callback' => 'input_simple_page',
+    'access callback' =>  TRUE,
+   );
+   return $items;
+}
+
+//A simple form
+
+function mirchi_simple_form($form, &$form_submit){
+  $form['color'] = array(
+    '#title' => t('Favorite Color'),
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#description' => t('What is your favorite color?...waite-'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  );
+  return $form;
+}
+
+function input_simple_page(){
+  $build = array(
+    'header_text' => array(
+      '#type' => 'markup',
+      '#markup' => '<p>'.t('To add additional content to a form page, you can use a page callback and return a render array like this.').'</p>',
+    ),
+    'example_form' => drupal_get_form('mirchi_simple_form'),
+  );
+  return $build;
+}
+
+//Form Validation
+function mirchi_simple_form_validation($form, &$form) {
+  if($form_stat['values']['color'] == 'blue'){
+    form_set_error('color', 'Sorry your favorite color is actually yellow.');
+  }
+}
+
+function mirchi_simple_form_submit($form, &$form_state) {
+  drupal_set_message(t("I like @color, toll", array('@color' => $form_state['values']['color'])));
+}

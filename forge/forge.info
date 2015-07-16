@@ -1,0 +1,5 @@
+name = Forge
+description = Module to redirect urls
+core = 7.x
+package = My Module
+version = 0.1

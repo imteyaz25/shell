@@ -1,0 +1,176 @@
+<?php
+/*
+* Implements hook_init()
+*
+*/
+
+function forge_init(){
+  if($_GET['q']=='shows'){
+    drupal_goto('http://yahoo.com', array('external' => TRUE));
+
+  }
+}
+
+/*
+*
+* Implements hook_menu()
+*/
+
+function forge_menu(){
+  $items['admin/config/system/forge'] = array(
+    'title' => 'Redirects',
+    'description' => 'Redirects URLs',
+    'page callback' => 'forge_get_url',
+    'access arguments' => array('access content'),
+  );
+  $items['admin/config/system/forge/new'] = array(
+    'title' => 'Add Redirect',
+    'description' => 'Redirects URLs',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forge_show_form'),
+    'access arguments' => array('access content'),
+  );
+  $items['admin/config/system/forge/edit/%'] = array(
+    'title' => 'Edit URLs',
+    'description' => 'Edit URLs',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forge_edit_form', 5),
+    'access arguments' => array('access content'),
+  );
+  $items['admin/config/system/forge/delete/%'] = array(
+    'title' => 'Are you sure?',
+    'description' => 'Delete URL',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forge_delete_form', 5),
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+function forge_get_url(){
+  $result = db_query('SELECT * from {forge}');
+
+  $output = l('Add URL','admin/config/system/forge/new');
+  $output .="<br/>";
+  $output .="<br/>";
+  $output .="<br/>";
+
+  foreach($result as $row){
+    $output .= $row->urls.l(' Edit','admin/config/system/forge/edit/'.$row->id).l(' Delete','admin/config/system/forge/delete/'.$row->id)."</br/>";
+  }
+
+  return $output;
+}
+
+function forge_show_form($form, &$form_submit){
+  $form['url'] = array(
+    '#type' => 'textfield',
+    '#title' => 'URL',
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#required' => TRUE,
+  );
+
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+  return $form;
+}
+
+function forge_show_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['url'])){
+    form_set_error('URL', t('Please enter valid url.'));
+  }
+}
+
+function forge_show_form_submit($form, &$form_state) {
+  try{
+    $thid = db_insert('forge')
+      ->fields(array(
+        'urls' => $form_state['values']['url'],
+      ))
+      ->execute();
+    drupal_set_message("URL successfully saved");
+    drupal_goto('forge');
+    return $thid;
+  }catch (Exception $e) {
+    //echo 'Caught exception: ',  $e->getMessage(), "\n";
+    drupal_set_message(t('Messages: '.$e->getMessage()));
+  }
+}
+
+function forge_edit_form($form, &$form_submit, $id){
+  $result = db_query('SELECT * from {forge} WHERE id = :id', array(':id' => $id));
+  foreach($result as $row){
+    $url = $row->urls;
+    $id = $row->id;
+  }
+  //drupal_set_message($url);
+  $form['url'] = array(
+    '#type' => 'textfield',
+    '#title' => 'URL',
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#required' => TRUE,
+    '#default_value' => $url,
+  );
+
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Update'),
+  );
+  return $form;
+}
+
+function forge_edit_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['url'])){
+    form_set_error('URL', t('Please enter valid url.'));
+  }
+}
+
+function forge_edit_form_submit($form, &$form_state) {
+  try{
+    $id = $form_state['build_info']['args'][0];
+    $thid = db_update('forge')
+      ->fields(array(
+        'urls' => $form_state['values']['url'],
+      ))
+      ->condition('id', $id, '=')
+      ->execute();
+    
+    drupal_set_message("URL Updated");
+    drupal_goto('forge');
+    return $thid;
+  }catch (Exception $e) {
+    //echo 'Caught exception: ',  $e->getMessage(), "\n";
+    drupal_set_message(t('Messages: '.$e->getMessage()));
+  }
+}
+
+function forge_delete_form($form, &$form_submit, $id){
+  
+  //drupal_set_message($url);
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Delete'),
+    '#label' => 'Are you sure?',
+  );
+  return $form;
+}
+
+function forge_delete_form_submit($form, &$form_state) {
+  try{
+    $id = $form_state['build_info']['args'][0];
+    $thid = db_delete('forge')
+      ->condition('id', $id)
+      ->execute();
+    drupal_set_message("URL deleted");
+    drupal_goto('forge');
+    return $thid;
+  }catch (Exception $e) {
+    //echo 'Caught exception: ',  $e->getMessage(), "\n";
+    drupal_set_message(t('Messages: '.$e->getMessage()));
+  }
+}

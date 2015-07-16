@@ -1,0 +1,4 @@
+name = Form Example Module
+description = An example module to display Form API
+core = 7.x
+version = 0.1
