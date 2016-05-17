@@ -14,22 +14,35 @@ ENV = sys.argv[1]
 
 '''Overriding value for stage'''
 if(ENV=='stage'):
-  ENV = 'stg'
+   ENV = 'stg'
+
+if(ENV=='prod'):
+   ENV = ''
 
 
 
-sites = ['bravo', 'cnbc', 'eonline', 'esquire', 'mun2', 'nbcsports', 'nbcd','nbcnews','nbcuniverso', 'syfy', 'sprout', 'telemundo', 'usa']
+sites = ['bravo','cnbc','eonline', 'esquire', 'mun2', 'nbcsports', 'nbcd','nbcnews','nbcuniverso', 'syfy', 'sprout', 'oxygen','telemundo', 'usa']
 
 for site in sites:
   print "******"+site+"*******"
-  #print "/var/www/html/tvemult"+ENV+"/docroot/sites/nbcutve-"+site+"/"
-  cmd1 = '/var/www/html/tvemulti'+ENV+'/docroot/sites/nbcutve-'+site+'/'
-  cmd = cmd1
-  print cmd1
+  docroot = '/var/www/html/tvemulti'+ENV+'/docroot'
+  url = "http://tve"+site+ENV+'.apps.nbcuni.com'
+  drush = "drush --root="+docroot+"  --uri="+url
+  print drush
   os.system("cd ~")
-  os.chdir(cmd)
-  os.system("drush cc all")
-  os.system("drush fra -y")
-  os.system("drush rr")
-  os.system("drush -y vset cron_safe_threshold 0")
-  os.system("cd ~")
+  cmd1 = drush +" cc all"
+  cmd2 = drush +" fra -y"
+  cmd3 = drush +" rr"
+  cmd4 = drush +" -y vset cron_safe_threshold 0"
+  cmd5 = drush +" sqlq "+"'select * from apachesolr_environment'"
+  cmd6 = drush +" sqlq "+"'delete from apachesolr_environment'"
+  cmd7 = drush +" dis acquia_agent acquia_search acquia_spi -y"
+  #cmd8 = drush +" cron"
+  os.system(cmd1)
+  os.system(cmd2)
+  os.system(cmd3)
+  os.system(cmd4)
+  os.system(cmd5)
+  os.system(cmd6)
+  os.system(cmd7)
+ # os.system(cmd8)
